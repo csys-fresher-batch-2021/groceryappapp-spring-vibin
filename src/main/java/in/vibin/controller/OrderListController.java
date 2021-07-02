@@ -55,7 +55,6 @@ public class OrderListController {
 		boolean isExist = true;
 		try {
 			isExist = orderProducts.getAllOrder().isEmpty();
-			System.out.println("try=" + isExist);
 		} catch (Exception e) {
 			isExist = true;
 			e.printStackTrace();
