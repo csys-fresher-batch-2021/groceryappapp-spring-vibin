@@ -1,6 +1,7 @@
 <%@page import="in.vibin.dao.*"%>
 <%@page import="java.util.List"%>
 <%@page import="in.vibin.model.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +10,7 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<main class="container-fluid">
-	<%
-		String isUser = (String) session.getAttribute("LOGGED_IN_USER");
-		%>
+	
 		<h3>Ordered Product List</h3>
 		<table class="table table-hover table-bordered">
 			<caption>List of Products</caption>
@@ -26,9 +25,8 @@
 			</thead>
 			<tbody id="order-tbl">
 			<tbody id="order-tbl1"></tbody>
-			<%if(isUser=="newUser"){%>
-				<tbody id="order-tbl2"></tbody>
-			<%}%>
+			<c:if test="${sessionScope.LOGGED_IN_USER=='newUser'}">
+     		<tbody id="order-tbl2"></tbody> <br/></c:if>
 			</tbody>
 
 		</table>
