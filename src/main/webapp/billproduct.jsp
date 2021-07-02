@@ -1,6 +1,7 @@
 <%@page import="in.vibin.dao.*"%>
 <%@page import="java.util.List"%>
 <%@page import="in.vibin.model.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,9 +32,10 @@
 
 			<tbody id="order-tbl">
 			<tbody id="order-tbl1"></tbody>
-			<%if(isUser=="newUser"){%>
-				<tbody id="order-tbl2"></tbody>
-			<%}%>
+			<c:if test="${sessionScope.LOGGED_IN_USER=='newUser'}">
+     		<tbody id="order-tbl2"></tbody> <br/></c:if>
+				
+			
 			</tbody>
 
 		</table>

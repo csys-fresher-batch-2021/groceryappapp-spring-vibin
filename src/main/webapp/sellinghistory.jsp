@@ -4,8 +4,6 @@
 <%@page import="java.util.Locale"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="java.sql.Date"%>
-<%@page import="in.vibin.service.SellingHistory"%>
-<%@page import="in.vibin.service.ProductService"%>
 <%@page import="in.vibin.dao.*"%>
 <%@page import="java.util.List"%>
 <%@page import="in.vibin.model.*"%>

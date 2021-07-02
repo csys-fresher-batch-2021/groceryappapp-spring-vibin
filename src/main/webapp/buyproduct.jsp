@@ -1,6 +1,7 @@
 <%@page import="in.vibin.dao.*"%>
 <%@page import="java.util.List"%>
 <%@page import="in.vibin.model.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +10,9 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<main class="container-fluid">
-		<%
-		String isUser = (String) session.getAttribute("LOGGED_IN_USER");
-		if (isUser != "user" && isUser != "newUser" ) {
-			response.sendRedirect("userlogin.jsp");
-		}
-		%>
-
+			<c:if test="${sessionScope.LOGGED_IN_USER!='user' && sessionScope.LOGGED_IN_USER!='newUser'}">
+        <script>window.location.href="userlogin.jsp"</script> 
+			</c:if>
 		<h3>List of products</h3>
 		<label>Enter the name</label> <input type="text" id="myInput"
 			onkeyup="myFunction()" placeholder="Search for names..." autofocus>
@@ -33,7 +30,7 @@
 			</thead>
 			<tbody id="product-tbl">
 			</tbody>
-			
+
 		</table>
 	</main>
 	<script>
