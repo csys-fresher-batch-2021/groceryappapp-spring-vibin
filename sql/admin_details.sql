@@ -1,0 +1,1 @@
+CREATE TABLE admin_details(id SERIAL PRIMARY KEY,mobilenumber BIGINT NOT NULL,password VAR CHAR(50) NOT NULL);

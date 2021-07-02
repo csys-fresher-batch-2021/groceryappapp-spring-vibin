@@ -1,6 +1,5 @@
 package in.vibin.controller;
 
-import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -19,7 +18,6 @@ import in.vibin.dao.SellingRepository;
 import in.vibin.dao.UserRepository;
 import in.vibin.model.Message;
 import in.vibin.model.RegisterUser;
-import in.vibin.model.SellingHistory;
 import in.vibin.model.User;
 import in.vibin.validator.MobileNumberValidation;
 
@@ -40,8 +38,7 @@ public class UserController {
 	
 @GetMapping("newUser/{mobileNumber}")
 public boolean newUser(@PathVariable("mobileNumber") Long mobileNumber) {
-	boolean s=sellingRepository.isExistUser(mobileNumber);
-	return s;
+	return sellingRepository.isExistUser(mobileNumber);
 }
 
 

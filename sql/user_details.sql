@@ -1,0 +1,1 @@
+CREATE TABLE user_details(id SERIAL PRIMARY KEY,mobilenumber BIGINT NOT NULL,password VARCHAR(50) NOT NULL);
